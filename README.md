@@ -2,7 +2,8 @@
 A Blob is a group of connected pixels in an image that share some common property ( E.g grayscale value ). In the image above, the dark connected regions are blobs, and the goal of blob detection is to identify and mark these regions.
 
 ### Steps includes for blob analysis on image 
-   > Load sample frames
+
+   ### > Load sample frames
    
    ```matlab
       
@@ -10,7 +11,7 @@ A Blob is a group of connected pixels in an image that share some common propert
       subplot(1,3,1)
       imshow(vidFrame1)
    ```
-   > Threshold image
+   ### > Threshold image
    ```matlab
    I = rgb2hsv(vidFrame1);
 
@@ -37,7 +38,7 @@ A Blob is a group of connected pixels in an image that share some common propert
 
    
    ```
-   > Remove disturbances
+   ### > Remove disturbances
    ```matlab
       
       noise = strel('disk' , 3);
@@ -47,7 +48,7 @@ A Blob is a group of connected pixels in an image that share some common propert
       imshow(open);
 
    ```
-   > Blob Analysis
+   ### > Blob Analysis
    
    ```matlab
    blob = vision.BlobAnalysis('MinimumBlobArea',200,...    
@@ -60,7 +61,7 @@ A Blob is a group of connected pixels in an image that share some common propert
 
 
    ```
-   > Annotate image
+   ### > Annotate image
    ```matlab
      
      % now we get a bounding box cordinates of detected ball let apply contour
@@ -75,12 +76,14 @@ A Blob is a group of connected pixels in an image that share some common propert
 
 
    ```
-   > Clean up
+   ### > Clean up
    
    ```matlab
       release(blob)
 
    ```
- 
+   
+### Result 
+
 ![](Media2.gif "Blob Detection using Matlab")
 
